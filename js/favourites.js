@@ -25,7 +25,7 @@ async function downloadImage(imageSrc) {
 
     // create anchor element with href imageURL
     const link = document.createElement("a");
-    link.href= imageUrl;
+    link.href = imageUrl;
     link.download = "cuteDog.png"; //set download name
 
     // force download
@@ -51,7 +51,7 @@ function onDownloadClick(event) {
  * Downloads all images within the favourites
  */
 function onDownloadAllClick() {
-    for(const imageSrc of favouritesList) {
+    for (const imageSrc of favouritesList) {
         downloadImage(imageSrc);
     }
 }
