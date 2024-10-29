@@ -3,6 +3,8 @@ const addFavouriteButton = document.getElementById("add-favourite-button");
 // select favourites button
 const favouritesDiv = document.getElementById("favourites-div");
 
+const downloadAllButton = document.getElementById("download-all-button");
+
 // current image stores image currently displayed
 let currentImage = undefined;
 // list of all favourites used to manage repetition
@@ -30,6 +32,7 @@ async function downloadImage(imageSrc) {
     link.click();
 }
 
+
 /**
  * Download image closest to the download button clciked
  * @param {Event} event 
@@ -42,6 +45,15 @@ function onDownloadClick(event) {
     const imageElement = parentDiv.querySelector("img");
 
     downloadImage(imageElement.src);
+}
+
+/**
+ * Downloads all images within the favourites
+ */
+function onDownloadAllClick() {
+    for(const imageSrc of favouritesList) {
+        downloadImage(imageSrc);
+    }
 }
 
 
@@ -80,3 +92,4 @@ function onAddFavouriteButtonClick() {
 
 // link events
 addFavouriteButton.onclick = onAddFavouriteButtonClick;
+downloadAllButton.onclick = onDownloadAllClick;
