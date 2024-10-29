@@ -1,7 +1,12 @@
-/* * {
+* {
     padding: 0;
     margin: 0;
-} */
+}
+
+div {
+    padding: 8px;
+    margin: 8px;
+}
 
 body {
     background-color: rgb(216, 240, 201);
@@ -38,4 +43,9 @@ select {
 
 #generator-div {
     min-height: 600px;
+}
+
+#image {
+    max-height: 500px;
+    min-height: 500px;
 }

@@ -7,6 +7,7 @@ const breedSelect = document.getElementById("breed-select");
 const subBreedSelect = document.getElementById("sub-breed-select");
 
 
+
 /**
  * fetch information from any api and return data in message
  * @param {string} url 
@@ -97,7 +98,6 @@ async function fetchRandomDog() {
     const imageSource = await fetchFromApi(randomDogUrl);
     dogImage.src = imageSource
 }
-
 
 
 
