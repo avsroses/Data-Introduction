@@ -1,8 +1,22 @@
-const addToFavourites = document.getElementById("add-to-favourites");
+// select favourites div
+const addFavouriteButton = document.getElementById("add-favourite-button");
+// select favourites button
+const favouritesDiv = document.getElementById("favourites-div");
 
-function favouritesList() {
+// current image stores image currently displayed
+let currentImage = undefined;
 
-    for (const fav of favourites) {
+/**
+ * create new image element and append it to the favourites div
+ */
+function onAddFavouriteButtonClick() {
+    const newImage = document.createElement("img");
+    newImage.src = currentImage;
+    newImage.classList.add("favourite-img");
 
+    if (newImage.src != currentImage.src){
+        favouritesDiv.append(newImage);
     }
 }
+
+addFavouriteButton.onclick = onAddFavouriteButtonClick;

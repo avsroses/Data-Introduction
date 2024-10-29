@@ -96,7 +96,8 @@ async function fetchRandomDog() {
     }
 
     const imageSource = await fetchFromApi(randomDogUrl);
-    dogImage.src = imageSource
+    currentImage = imageSource;
+    dogImage.src = imageSource;
 }
 
 

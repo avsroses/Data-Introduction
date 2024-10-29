@@ -41,6 +41,11 @@ select {
     justify-content: left;
 }
 
+.favourite-img {
+    max-height: 75px;
+    margin: 5px;
+}
+
 #generator-div {
     min-height: 600px;
 }
