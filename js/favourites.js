@@ -11,7 +11,7 @@ let favouritesList = [];
 
 /**
  * download image stored at given src
- * @param {String} imageSrc source of teh database image
+ * @param {String} imageSrc source of the database image
  */
 async function downloadImage(imageSrc) {
     // image fetch to get specific info
