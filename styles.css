@@ -19,6 +19,10 @@ body {
     flex-direction: column;
 }
 
+.justify-left {
+    justify-content: left;
+}
+
 #generator-div {
     min-height: 600px;
 }
