@@ -1,3 +1,4 @@
+// selects image and button
 const dogImage = document.getElementById("image");
 const randomDogButton = document.getElementById("random-dog-button");
 
@@ -32,7 +33,10 @@ async function fetchFromApi(url) {
     }
 }
 
-// selects breeds to display on list
+
+/**
+ * selects breeds to display on list
+ */
 async function fetchBreedPossibilities() {
     const breedListUrl = "https://dog.ceo/api/breeds/list"
 
@@ -46,7 +50,10 @@ async function fetchBreedPossibilities() {
     }
 }
 
-// selects sub breeds to display for each breed when selected
+
+/**
+ * selects sub breeds to display for each breed when selected
+ */
 async function fetchSubBreedPossibilities() {
     // restart selection
     while (subBreedSelect.options.length > 0) {
@@ -72,7 +79,10 @@ async function fetchSubBreedPossibilities() {
     }
 }
 
-// selects random dog image or uses choices to select random
+
+/**
+ * selects random dog image or uses choices to select random
+ */
 async function fetchRandomDog() {
     let randomDogUrl = "https://dog.ceo/api/breeds/image/random"
 
