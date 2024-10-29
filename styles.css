@@ -1,7 +1,7 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
-}
+} */
 
 body {
     background-color: rgb(216, 240, 201);
@@ -9,10 +9,16 @@ body {
     color: rgb(32, 50, 82);
 }
 
-.flex-center {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.flex-column {
     flex-direction: column;
 }
 
+#generator-div {
+    min-height: 600px;
+}

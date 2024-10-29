@@ -4,38 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link href="styles.css" rel="stylesheet">
 
 </head>
 <body>
+
     <!-- Viewing and selecting dogs section -->
-    <div class="flex-center">
+    <div id="generator-div" class="container flex-column">
         <!-- Title -->
         <h1> Random Dog Generator </h1>
-        <img>
+        <!-- random image display -->
+        <img alt="a random dog is displayed">
         <div>
-            <div>
-                <!-- Selection of breed -->
+            <!-- Selection of breed -->
+            <div class="container">
                 <p> Breed </p>
                 <select>
-                    <option value="any"></option>    
+                    <option> any </option>    
                 </select>
             </div>
-            <div>
-                <!-- Selection of sub breed -->
+            <!-- Selection of sub breed -->
+            <div class="container">
                 <p> Sub Breed</p>
                 <select> 
-                    <option value="any"></option>
+                    <option> any </option>
                 </select>
             </div>
+
+            <!-- Get a random dog  -->
+            <button>Get Random Dog</button>
+            <!-- add dog to favourites list and display -->
+            <button>Add To Favourites</button>
         </div>
     </div>
+
     <!-- Favourite section -->
-    <div class="flex-center">
+    <div class="container flex-column">
         <div>
             <h2> Your Favourites </h2>
         </div>
         <button> Download All Favourites</button>
     </div>
+
 </body>
 </html>
