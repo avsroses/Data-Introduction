@@ -9,6 +9,19 @@ body {
     color: rgb(32, 50, 82);
 }
 
+button {
+    background-color: darkslategray;
+    color: white;
+    border-radius: 5px;
+}
+
+select {
+    background-color: darkslategray;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+}
+
 .container {
     display: flex;
     justify-content: center;

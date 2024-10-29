@@ -32,7 +32,7 @@ async function fetchFromApi(url) {
     }
 }
 
-
+// selects breeds to display on list
 async function fetchBreedPossibilities() {
     const breedListUrl = "https://dog.ceo/api/breeds/list"
 
@@ -46,41 +46,48 @@ async function fetchBreedPossibilities() {
     }
 }
 
-
+// selects sub breeds to display for each breed when selected
 async function fetchSubBreedPossibilities() {
+    let subBreedListUrl = "";
     if (breedSelect.value !== "any") {
-        const subBreedListUrl = "https://dog.ceo/api/breed/" + breedSelect.value + "/list";
-
+        subBreedListUrl = "https://dog.ceo/api/breed/" + breedSelect.value + "/list";
         const subBreedsList = await fetchFromApi(subBreedListUrl);
 
         for (const subBreed of subBreedsList) {
-            // populate breed select
+            // populate subBreed select
             const newOption = document.createElement("option"); //create new option element#
             newOption.text = subBreed;
             subBreedSelect.options.add(newOption, subBreed);
         }
     }
-
 }
 
-
+// selects random dog image or uses choices to select random
 async function fetchRandomDog() {
     let randomDogUrl = "https://dog.ceo/api/breeds/image/random"
 
     if (breedSelect.value !== "any") {
         randomDogUrl = "https://dog.ceo/api/breed/" + breedSelect.value + "/images/random";
     }
-    
+
+    if (subBreedSelect.value !== "any") {
+        randomDogUrl = "https://dog.ceo/api/breed/" + breedSelect.value + "/" + subBreedSelect.value + "/images/random"
+    }
+
     const imageSource = await fetchFromApi(randomDogUrl);
     dogImage.src = imageSource
 }
 
 
 
+
 // link buttons to events
 randomDogButton.onclick = fetchRandomDog;
+breedSelect.onchange = fetchSubBreedPossibilities;
+
 
 // Functions to b executed at beginning of code
 fetchRandomDog();
 fetchBreedPossibilities();
-fetchSubBreedPossibilities();
+
+
