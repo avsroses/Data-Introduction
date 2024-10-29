@@ -1,5 +1,8 @@
+const breedSelect = document.getElementById("breed-select");
+const subBreeedSelect = document.getElementById("sub-breed-select");
+
 async function fetchBreedPossibilities() {
-    const breedListUrl = "https://dog.ceo/api/breeds/list/all"
+    const breedListUrl = "https://dog.ceo/api/breeds/list"
 
     // try to fetch url and display error otherwise
     try {
@@ -14,7 +17,14 @@ async function fetchBreedPossibilities() {
         // transfrom to json
         const json = await response.json();
 
-        console.log(json);
+        const breedsList = json.message;
+
+        for(const breed of breedsList) {
+            // populate breed select
+            const newOption = document.createElement("option"); //create new option element#
+            newOption.text = breed;
+            breedSelect.options.add(newOption, breed);
+        }
 
     } catch(error) {
         console.error(error);
