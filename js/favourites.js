@@ -9,6 +9,41 @@ let currentImage = undefined;
 let favouritesList = [];
 
 
+/**
+ * 
+ * @param {String} imageSrc 
+ */
+async function downloadImage(imageSrc) {
+    // image fetch to get specific info
+    const image = await fetch(imageSrc);
+    // blob contains specific data related to image file
+    const imageBlob = await image.blob();
+    // create a url object to point to the blob
+    const imageUrl = URL.createObjectURL(imageBlob);
+
+    // create anchor element with href imageURL
+    const link = document.createElement("a");
+    link.href= imageUrl;
+    link.download = "cuteDog.png"; //set download name
+
+    // force download
+    link.click();
+}
+
+/**
+ * Download image closest to the download button clciked
+ * @param {Event} event 
+ */
+function onDownloadClick(event) {
+    const clickedButton = event.target;
+    // look for closest thing above current element
+    const parentDiv = clickedButton.closest("div");
+    // Look for element below thats an image
+    const imageElement = parentDiv.querySelector("img");
+
+    downloadImage(imageElement.src);
+}
+
 
 /**
  * create new image element and append it to the favourites div
@@ -31,6 +66,7 @@ function onAddFavouriteButtonClick() {
     // create download button
     const downloadButton = document.createElement("button");
     downloadButton.innerHTML = "Download";
+    downloadButton.onclick = onDownloadClick;
 
     // append newDiv childs
     newDiv.append(newImage);
