@@ -48,6 +48,16 @@ async function fetchBreedPossibilities() {
 
 // selects sub breeds to display for each breed when selected
 async function fetchSubBreedPossibilities() {
+    // restart selection
+    while (subBreedSelect.options.length > 0) {
+        subBreedSelect.remove(0);
+    }
+
+    // add first option
+    const optionAny = document.createElement("Option");
+    optionAny.text = "any";
+    subBreedSelect.options.add(optionAny, "any");
+
     let subBreedListUrl = "";
     if (breedSelect.value !== "any") {
         subBreedListUrl = "https://dog.ceo/api/breed/" + breedSelect.value + "/list";
