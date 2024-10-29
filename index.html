@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="js/database.js" defer></script>
 
 </head>
+
 <body>
 
     <!-- Viewing and selecting dogs section -->
@@ -16,26 +18,26 @@
         <!-- Title -->
         <h1> Random Dog Generator </h1>
         <!-- random image display -->
-        <img alt="a random dog is displayed">
+        <img id="image" alt="a random dog is displayed" />
 
         <div>
             <!-- Selection of breed -->
             <div class="container justify-left">
                 <p> Breed </p>
                 <select id="breed-select">
-                    <option> any </option>    
+                    <option value="any"> any </option>
                 </select>
             </div>
             <!-- Selection of sub breed -->
             <div class="container justify-left">
                 <p> Sub Breed </p>
-                <select id="sub-breed-select"> 
-                    <option> any </option>
+                <select id="sub-breed-select">
+                    <option value="any"> any </option>
                 </select>
             </div>
 
             <!-- Get a random dog  -->
-            <button>Get Random Dog</button>
+            <button id="random-dog-button">Get Random Dog</button>
             <!-- add dog to favourites list and display -->
             <button>Add To Favourites</button>
         </div>
@@ -50,4 +52,5 @@
     </div>
 
 </body>
+
 </html>
