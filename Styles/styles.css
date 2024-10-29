@@ -4,8 +4,8 @@
 }
 
 div {
-    padding: 8px;
-    margin: 8px;
+    padding: 5px;
+    margin: 5px;
 }
 
 body {
@@ -42,7 +42,9 @@ select {
 }
 
 .favourite-img {
-    max-height: 75px;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
     margin: 5px;
 }
 

@@ -8,6 +8,8 @@ let currentImage = undefined;
 // list of all favourites used to manage repetition
 let favouritesList = [];
 
+
+
 /**
  * create new image element and append it to the favourites div
  */
@@ -17,9 +19,28 @@ function onAddFavouriteButtonClick() {
     // add current image to favourites list
     favouritesList.push(currentImage);
 
+    // create div that will contain everything favourite related
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("container", "favourite-card");
+
+    // create new image and update source
     const newImage = document.createElement("img");
     newImage.src = currentImage;
     newImage.classList.add("favourite-img");
+
+    // create download button
+    const downloadButton = document.createElement("button");
+    downloadButton.innerHTML = "Download";
+
+    // append newDiv childs
+    newDiv.append(newImage);
+    newDiv.append(downloadButton);
+
+    // append div to favourites div
+    favouritesDiv.append(newDiv);
+
 }
 
+
+// link events
 addFavouriteButton.onclick = onAddFavouriteButtonClick;
